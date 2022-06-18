@@ -23,7 +23,7 @@ router.post(
       if (!errors.isEmpty()) {
         return res.status(400).json({ message: errors });
       }
-      const { email, password } = req.body;
+      const { name, email, password } = req.body;
       const candidate = await User.findOne({ email });
       if (candidate) {
         return res
@@ -31,7 +31,7 @@ router.post(
           .json({ message: `User with email ${email} already exists` });
       }
       const hashPassword = await bcrypt.hash(password, 5);
-      const user = new User({ email, password: hashPassword });
+      const user = new User({ name, email, password: hashPassword });
       await user.save();
       return res.json({ message: "User was created" });
     } catch (error) {
@@ -56,6 +56,7 @@ router.post("/login", async (req, res) => {
       token,
       user: {
         id: user.id,
+        name: user.name,
         email: user.email,
         diskSpace: user.diskSpace,
         usedSpace: user.usedSpace,
