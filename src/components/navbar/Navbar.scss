@@ -1,0 +1,33 @@
+@import "../../utils/constants.scss";
+
+.header {
+  width: 100%;
+}
+.navbar {
+  height: 48px;
+  background: $bg-dark;
+  border-bottom: 1px solid $border-dark;
+  padding: 0 25px;
+  &__logo {
+    color: #fff;
+    font-size: 2rem;
+    &_text {
+      color: #fff;
+      margin-left: 1rem;
+      font-size: 1.5rem;
+    }
+  }
+  &__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $text-gray;
+    padding-right: 20px;
+    transition: 0.2s ease;
+  }
+  &__link:hover {
+    color: #fff;
+  }
+  &__link:last-child {
+    padding: 0;
+  }
+}

@@ -1,0 +1,15 @@
+.home {
+  max-width: 1200px;
+  margin: 50px 25px;
+  color: rgb(230, 230, 230);
+  &__left {
+    width: 30%;
+  }
+  &__right {
+    width: 70%;
+    &_img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
