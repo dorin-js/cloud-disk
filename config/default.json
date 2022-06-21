@@ -1,5 +1,6 @@
 {
   "serverPort": 5000,
   "dbUrl": "mongodb+srv://dorin:MYpass174@cloud.xked3.mongodb.net/?retryWrites=true&w=majority",
-  "secretKey": "dorin-cloud-disk"
+  "secretKey": "dorin-cloud-disk",
+  "filePath": "C:\\Users\\dorin\\Desktop\\epic-react\\cloud-store\\server\\files"
 }
