@@ -9,11 +9,14 @@ const PORT = config.get("serverPort");
 
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.json({ message: "welcome to my app" });
+});
 app.use("/api/auth", authRouter);
 
 const start = async () => {
   try {
-    await mongoose.connect(config.get("dbUrl"), {
+    mongoose.connect(config.get("dbUrl"), {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
