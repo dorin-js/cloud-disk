@@ -13,10 +13,12 @@ const Navbar = () => {
   return (
     <header className="header">
       <nav className="navbar df jcsb aic">
-        <NavLink className="navbar__link df aic" to="/">
-          <AiOutlineCloudServer className="navbar__logo" />
-          <span className="navbar__logo navbar__logo_text">Cloud Disk</span>
-        </NavLink>
+        {!isAuth && (
+          <NavLink className="navbar__link df aic" to="/">
+            <AiOutlineCloudServer className="navbar__logo" />
+            <span className="navbar__logo navbar__logo_text">Cloud Disk</span>
+          </NavLink>
+        )}
         <div className="navbar__right">
           {!isAuth && (
             <NavLink className="navbar__link" to="/login">
@@ -27,11 +29,6 @@ const Navbar = () => {
             <NavLink className="navbar__link" to="/registration">
               Register
             </NavLink>
-          )}
-          {isAuth && (
-            <span className="navbar__link" onClick={() => dispatch(logout())}>
-              Log out
-            </span>
           )}
         </div>
       </nav>

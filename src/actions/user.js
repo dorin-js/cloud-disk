@@ -48,7 +48,13 @@ export const auth = () => {
       dispatch(setUser(response.data.user));
       localStorage.setItem("token", response.data.token);
     } catch (error) {
-      alert(error.response.data.message);
+      let err =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      alert(err);
       // console.log(error);
       localStorage.removeItem("token");
     }

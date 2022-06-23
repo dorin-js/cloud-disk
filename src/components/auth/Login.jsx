@@ -31,6 +31,7 @@ export default function Login() {
             aria-label="password"
           />
           <button
+            className="button"
             type="submit"
             content="Login"
             onClick={(e) => {
